@@ -1,0 +1,98 @@
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+'Populate hook on JB0052 - JBS0052L Multipart WIP to FG Lot/serial assignment screen
+F.Intrinsic.Control.If(V.Caller.Hook,=,16500)
+	F.Intrinsic.Control.CallSub(VerifyAndEnable)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.VerifyAndEnable.Start
+F.Intrinsic.Control.Try
+V.Local.sSql.Declare
+V.Local.sPL.Declare
+V.Local.iCheck.Declare
+V.Local.sJS.Declare
+V.Local.sFAAWO.Declare
+V.Local.sPN.Declare
+V.Local.sRev.Declare
+V.Local.sPartRev.Declare
+
+V.Local.sPN.Set(V.Passed.000008)
+V.Local.sRev.Set(V.Passed.000113)
+
+F.Intrinsic.String.RPad(V.Local.sPN.Trim," ",17,V.Local.sPN)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sPN,V.Local.sRev,V.Local.sPartRev)
+
+F.Intrinsic.String.Build("Select b.PL from V_INVENTORY_MSTR a inner join GCG_5727_FAA_PL b on a.Product_line = b.PL where a.part = '{0}'",V.Local.sPartRev.Trim,V.Local.sSql)
+
+F.ODBC.Connection!conx.OpenCompanyConnection
+F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSql,V.Local.sPL)
+
+F.Intrinsic.Control.If(V.Local.sPL.Trim,<>,"")
+	'Unlock the script 1 button.
+	'Function.Intrinsic.UI.ChangeCallerProperty(V.Passed.000116, "LOCK", 0)
+	'Default Qty field to 1
+	V.Passed.000015.Set("1")
+	'Lock the serial number field.
+	Function.Intrinsic.UI.ChangeCallerProperty(V.Passed.000014,"LOCK",1)
+	'V.Passed.000116.set("FAA 8130")
+	'If an FAA WO has already been generated, populate the SN field with that number
+	F.Intrinsic.String.Build("{0}-{1}",V.Passed.000005.Trim,V.Passed.000006.Trim,V.Local.sJS)
+	F.Intrinsic.String.Build("select FAA_WO_NO from GCG_5727_FAA_MAIN where GSS_WO = '{0}' and GSS_PART = '{1}'",V.Local.sJS,V.Passed.000008.Trim,V.Local.sFAAWO)
+	F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sFAAWO,V.Local.sFAAWO)
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		F.ODBC.Connection!conx.close
+		V.Passed.000116.Set("0 of 0 8130")
+		Function.Intrinsic.UI.ChangeCallerProperty(V.Passed.000116,"LOCK",1)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Split(V.Local.sFAAWO,"#$#",V.Local.sFAAWO)
+		F.Intrinsic.Variable.UBound(V.Local.sFAAWO,V.Local.iCheck)
+		F.Intrinsic.Math.Add(V.Local.iCheck,1,V.Local.iCheck)
+		F.Intrinsic.String.Build("Select RTRIM(QTY) as QTY_ORDER from V_JOB_MULT_PARTS where RTRIM(JOB) = '{0}' and RTRIM(SUFFIX) = '{1}' and RTRIM(PART) = '{2}'",V.Passed.000005.Trim, V.Passed.000006.Trim,V.Passed.000008.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Local.sSql.Trim,=,"")
+			F.Intrinsic.String.Build("Select RTRIM(QTY_ORDER) as QTY_ORDER from V_JOB_HEADER where RTRIM(JOB) = '{0}' and RTRIM(SUFFIX) = '{1}'",V.Passed.000005.Trim, V.Passed.000006.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Build("{0} of {1} 8130",V.Local.iCheck.Long,V.Local.sSql.Long,V.Local.sSql)
+		Function.Intrinsic.UI.ChangeCallerProperty(V.Passed.000116,"LOCK",0)
+		V.Passed.000116.Set(V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else	
+'Script 1 button
+	'V.Passed.000116.set("FAA 8130")
+	'Lock the script 1 button
+	Function.Intrinsic.UI.ChangeCallerProperty(V.Passed.000116,"LOCK",1)
+	'unlock the serial number field.
+	Function.Intrinsic.UI.ChangeCallerProperty(V.Passed.000014,"LOCK",0)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.VerifyAndEnable.End
+
+Program.Sub.Error.Start
+V.Local.sError.Declare
+V.Local.iRet.Declare
+V.Local.sSep.Declare
+
+F.Intrinsic.String.Build("-------------------------------------------------------------------------------------",,V.Local.sSep)
+F.Intrinsic.String.Build("({5}-{6}){0}{7}{0}Project: {4}{0}{7}{0}Sub: {1}{0}Error: {2}, {3}", V.Ambient.NewLine, V.Args.SubRoutine, V.Args.eNumber, V.Args.eDescription,V.Caller.ScriptFile,V.Ambient.Date, V.Ambient.Time,V.Local.sSep,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError,"Error",V.Local.iRet)
+Program.Sub.Error.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$tsmith$}$20200910155515142$}$xqPbj9atw05FglvzeFsZ9cqXP+qvG6tXFmYm/lGOGoV+G0n9VHjsUEr1I/Jvv0xcpDSDcP/1YSU=
+Program.Sub.Comments.End
