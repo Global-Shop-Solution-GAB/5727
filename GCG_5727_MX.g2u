@@ -1,0 +1,1051 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.fmMXMain..Create(BaseForm)
+Gui.fmMXMain..Caption("8130 Maintenance (5727)")
+Gui.fmMXMain..Size(1391,720)
+Gui.fmMXMain..MinX(0)
+Gui.fmMXMain..MinY(0)
+Gui.fmMXMain..Position(0,0)
+Gui.fmMXMain..AlwaysOnTop(True)
+Gui.fmMXMain..FontName("Tahoma")
+Gui.fmMXMain..FontSize(8.25)
+Gui.fmMXMain..ControlBox(True)
+Gui.fmMXMain..MaxButton(False)
+Gui.fmMXMain..MinButton(True)
+Gui.fmMXMain..MousePointer(0)
+Gui.fmMXMain..Moveable(True)
+Gui.fmMXMain..Sizeable(False)
+Gui.fmMXMain..ShowInTaskBar(True)
+Gui.fmMXMain..TitleBar(True)
+Gui.fmMXMain..Event(UnLoad,Form_UnLoad)
+Gui.fmMXMain.tabMain.Create(Tab)
+Gui.fmMXMain.tabMain.Enabled(True)
+Gui.fmMXMain.tabMain.Visible(True)
+Gui.fmMXMain.tabMain.Zorder(0)
+Gui.fmMXMain.tabMain.Size(1392,693)
+Gui.fmMXMain.tabMain.Position(0,0)
+Gui.fmMXMain.tabMain.FontName("Tahoma")
+Gui.fmMXMain.tabMain.FontSize(8.25)
+Gui.fmMXMain.tabMain.Anchor(15)
+Gui.fmMXMain.tabMain.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.tabMain.ForeColor(0)
+Gui.fmMXMain.tabMain.Tabs(2)
+Gui.fmMXMain.tabMain.SetTab(0)
+Gui.fmMXMain.tabMain.Caption("LIST MX")
+Gui.fmMXMain.tabMain.SetTab(1)
+Gui.fmMXMain.tabMain.Caption("PERSONNEL MX")
+Gui.fmMXMain.lblSig.Create(Label,"Authorized Personnel Signature File Maintenance",True,234,13,0,5,7,True,0,"Tahoma",8.25,,0,0)
+Gui.fmMXMain.lblSig.BorderStyle(0)
+Gui.fmMXMain.lblSig.Parent("tabMain",1)
+Gui.fmMXMain.lblPL.Create(Label,"Product Lines",True,110,19,0,753,39,True,0,"Tahoma",12,,0,0)
+Gui.fmMXMain.lblPL.BorderStyle(0)
+Gui.fmMXMain.lblPL.Parent("tabMain",0)
+Gui.fmMXMain.lblPL.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.lblPL.ForeColor(0)
+Gui.fmMXMain.lblADT.Create(Label,"Approved Data Types",True,175,19,0,346,39,True,0,"Tahoma",12,,0,0)
+Gui.fmMXMain.lblADT.BorderStyle(0)
+Gui.fmMXMain.lblADT.Parent("tabMain",0)
+Gui.fmMXMain.lblADT.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.lblADT.ForeColor(0)
+Gui.fmMXMain.lbl8130Status.Create(Label,"8130 Status Types",True,150,19,0,163,39,True,0,"Tahoma",12,,0,0)
+Gui.fmMXMain.lbl8130Status.BorderStyle(0)
+Gui.fmMXMain.lbl8130Status.Parent("tabMain",0)
+Gui.fmMXMain.lbl8130Status.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.lbl8130Status.ForeColor(0)
+Gui.fmMXMain.GsRodTypes.Create(GsGridControl)
+Gui.fmMXMain.GsRodTypes.Enabled(True)
+Gui.fmMXMain.GsRodTypes.Visible(True)
+Gui.fmMXMain.GsRodTypes.Zorder(0)
+Gui.fmMXMain.GsRodTypes.Size(153,600)
+Gui.fmMXMain.GsRodTypes.Position(1048,58)
+Gui.fmMXMain.GsRodTypes.Parent("tabMain",0)
+Gui.fmMXMain.GsRodTypes.Anchor(9)
+Gui.fmMXMain.GsRodTypes.TabStop(True)
+Gui.fmMXMain.GsRodTypes.TabIndex(7)
+Gui.fmMXMain.GsRodTypes.Event(RowCellClick,RowCellClickAll)
+Gui.fmMXMain.lblRodType.Create(Label,"Rod Types",True,85,19,0,1082,39,True,0,"Tahoma",12,,0,0)
+Gui.fmMXMain.lblRodType.BorderStyle(0)
+Gui.fmMXMain.lblRodType.Parent("tabMain",0)
+Gui.fmMXMain.lblRodType.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.lblRodType.ForeColor(0)
+Gui.fmMXMain.Gs8130Type.Create(GsGridControl)
+Gui.fmMXMain.Gs8130Type.Enabled(True)
+Gui.fmMXMain.Gs8130Type.Visible(True)
+Gui.fmMXMain.Gs8130Type.Zorder(0)
+Gui.fmMXMain.Gs8130Type.Size(153,600)
+Gui.fmMXMain.Gs8130Type.Position(6,58)
+Gui.fmMXMain.Gs8130Type.Parent("tabMain",0)
+Gui.fmMXMain.Gs8130Type.TabStop(True)
+Gui.fmMXMain.Gs8130Type.TabIndex(1)
+Gui.fmMXMain.Gs8130Type.Event(RowCellClick,RowCellClickAll)
+Gui.fmMXMain.frameEdit.Create(Frame)
+Gui.fmMXMain.frameEdit.Enabled(True)
+Gui.fmMXMain.frameEdit.Visible(True)
+Gui.fmMXMain.frameEdit.Zorder(0)
+Gui.fmMXMain.frameEdit.Size(1011,33)
+Gui.fmMXMain.frameEdit.Position(6,4)
+Gui.fmMXMain.frameEdit.Caption("")
+Gui.fmMXMain.frameEdit.FontName("Tahoma")
+Gui.fmMXMain.frameEdit.FontSize(8.25)
+Gui.fmMXMain.frameEdit.Parent("tabMain",0)
+Gui.fmMXMain.cmdAdd.Create(Button)
+Gui.fmMXMain.cmdAdd.Enabled(True)
+Gui.fmMXMain.cmdAdd.Visible(True)
+Gui.fmMXMain.cmdAdd.Zorder(0)
+Gui.fmMXMain.cmdAdd.Size(100,25)
+Gui.fmMXMain.cmdAdd.Position(706,4)
+Gui.fmMXMain.cmdAdd.Caption("Add")
+Gui.fmMXMain.cmdAdd.FontName("Tahoma")
+Gui.fmMXMain.cmdAdd.FontSize(10)
+Gui.fmMXMain.cmdAdd.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.cmdAdd.BackColor(12648384)
+Gui.fmMXMain.cmdAdd.Parent("frameEdit")
+Gui.fmMXMain.cmdAdd.Event(Click,cmdAdd_Click)
+Gui.fmMXMain.cmdAdd.ForeColor(0)
+Gui.fmMXMain.lblEntry.Create(Label,"Entry",True,35,16,0,13,8,True,0,"Tahoma",10,,0,0)
+Gui.fmMXMain.lblEntry.BorderStyle(0)
+Gui.fmMXMain.lblEntry.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.lblEntry.Parent("frameEdit")
+Gui.fmMXMain.lblEntry.ForeColor(0)
+Gui.fmMXMain.cboWhichList.Create(ComboBox)
+Gui.fmMXMain.cboWhichList.Enabled(True)
+Gui.fmMXMain.cboWhichList.Visible(True)
+Gui.fmMXMain.cboWhichList.Zorder(0)
+Gui.fmMXMain.cboWhichList.Size(218,22)
+Gui.fmMXMain.cboWhichList.Position(379,5)
+Gui.fmMXMain.cboWhichList.FontName("Tahoma")
+Gui.fmMXMain.cboWhichList.FontSize(10)
+Gui.fmMXMain.cboWhichList.Parent("frameEdit")
+Gui.fmMXMain.cboWhichList.AddItem("8130 Types")
+Gui.fmMXMain.cboWhichList.AddItem("8130 Status Types")
+Gui.fmMXMain.cboWhichList.AddItem("Approved Data Types")
+Gui.fmMXMain.cboWhichList.AddItem("Discrepancy Types")
+Gui.fmMXMain.cboWhichList.AddItem("Product Lines")
+Gui.fmMXMain.cboWhichList.AddItem("Material Types")
+Gui.fmMXMain.cboWhichList.AddItem("Rod Types")
+Gui.fmMXMain.cboWhichList.AddItem("Void Reasons")
+Gui.fmMXMain.txtEntry.Create(TextBox,"",True,289,22,0,53,5,True,0,"Tahoma",10,,1)
+Gui.fmMXMain.txtEntry.Parent("frameEdit")
+Gui.fmMXMain.cmdDelete.Create(Button)
+Gui.fmMXMain.cmdDelete.Enabled(True)
+Gui.fmMXMain.cmdDelete.Visible(True)
+Gui.fmMXMain.cmdDelete.Zorder(0)
+Gui.fmMXMain.cmdDelete.Size(100,25)
+Gui.fmMXMain.cmdDelete.Position(809,4)
+Gui.fmMXMain.cmdDelete.Caption("Delete Entry")
+Gui.fmMXMain.cmdDelete.FontName("Tahoma")
+Gui.fmMXMain.cmdDelete.FontSize(10)
+Gui.fmMXMain.cmdDelete.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.cmdDelete.BackColor(12632319)
+Gui.fmMXMain.cmdDelete.Parent("frameEdit")
+Gui.fmMXMain.cmdDelete.Event(Click,cmdDelete_Click)
+Gui.fmMXMain.cmdDelete.ForeColor(0)
+Gui.fmMXMain.lblWhichList.Create(Label,"List",True,23,16,0,347,8,True,0,"Tahoma",10,,0,0)
+Gui.fmMXMain.lblWhichList.BorderStyle(0)
+Gui.fmMXMain.lblWhichList.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.lblWhichList.Parent("frameEdit")
+Gui.fmMXMain.lblWhichList.ForeColor(0)
+Gui.fmMXMain.cmdListClear.Create(Button)
+Gui.fmMXMain.cmdListClear.Enabled(True)
+Gui.fmMXMain.cmdListClear.Visible(True)
+Gui.fmMXMain.cmdListClear.Zorder(0)
+Gui.fmMXMain.cmdListClear.Size(100,25)
+Gui.fmMXMain.cmdListClear.Position(604,4)
+Gui.fmMXMain.cmdListClear.Caption("Clear Fields")
+Gui.fmMXMain.cmdListClear.FontName("Tahoma")
+Gui.fmMXMain.cmdListClear.FontSize(10)
+Gui.fmMXMain.cmdListClear.BackColor(16777215)
+Gui.fmMXMain.cmdListClear.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.cmdListClear.Event(Click,cmdClear_Click)
+Gui.fmMXMain.cmdListClear.Parent("frameEdit")
+Gui.fmMXMain.cmdListClear.ForeColor(-2147483639)
+Gui.fmMXMain.GsDiscType.Create(GsGridControl)
+Gui.fmMXMain.GsDiscType.Enabled(True)
+Gui.fmMXMain.GsDiscType.Visible(True)
+Gui.fmMXMain.GsDiscType.Zorder(0)
+Gui.fmMXMain.GsDiscType.Size(180,600)
+Gui.fmMXMain.GsDiscType.Position(547,58)
+Gui.fmMXMain.GsDiscType.Parent("tabMain",0)
+Gui.fmMXMain.GsDiscType.Anchor(13)
+Gui.fmMXMain.GsDiscType.TabStop(True)
+Gui.fmMXMain.GsDiscType.TabIndex(4)
+Gui.fmMXMain.GsDiscType.Event(RowCellClick,RowCellClickAll)
+Gui.fmMXMain.lblMatTypes.Create(Label,"Material Types",True,121,19,0,906,39,True,0,"Tahoma",12,,0,0)
+Gui.fmMXMain.lblMatTypes.BorderStyle(0)
+Gui.fmMXMain.lblMatTypes.Parent("tabMain",0)
+Gui.fmMXMain.lblMatTypes.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.lblMatTypes.ForeColor(0)
+Gui.fmMXMain.GsVoid.Create(GsGridControl)
+Gui.fmMXMain.GsVoid.Enabled(True)
+Gui.fmMXMain.GsVoid.Visible(True)
+Gui.fmMXMain.GsVoid.Zorder(0)
+Gui.fmMXMain.GsVoid.Size(153,600)
+Gui.fmMXMain.GsVoid.Position(1208,58)
+Gui.fmMXMain.GsVoid.Parent("tabMain",0)
+Gui.fmMXMain.GsVoid.Anchor(9)
+Gui.fmMXMain.GsVoid.TabStop(True)
+Gui.fmMXMain.GsVoid.TabIndex(8)
+Gui.fmMXMain.GsVoid.Event(RowCellClick,RowCellClickAll)
+Gui.fmMXMain.lbl8130Type.Create(Label,"8130 Desc",True,83,19,0,36,39,True,0,"Tahoma",12,,0,0)
+Gui.fmMXMain.lbl8130Type.BorderStyle(0)
+Gui.fmMXMain.lbl8130Type.Parent("tabMain",0)
+Gui.fmMXMain.lbl8130Type.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.lbl8130Type.ForeColor(0)
+Gui.fmMXMain.lblVoid.Create(Label,"Void Reasons",True,109,19,0,1230,39,True,0,"Tahoma",12,,0,0)
+Gui.fmMXMain.lblVoid.BorderStyle(0)
+Gui.fmMXMain.lblVoid.ForeColor(0)
+Gui.fmMXMain.lblVoid.Parent("tabMain",0)
+Gui.fmMXMain.lblVoid.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.lblDiscType.Create(Label,"Discrepancy Types",True,150,19,0,562,39,True,0,"Tahoma",12,,0,0)
+Gui.fmMXMain.lblDiscType.BorderStyle(0)
+Gui.fmMXMain.lblDiscType.Parent("tabMain",0)
+Gui.fmMXMain.lblDiscType.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.lblDiscType.ForeColor(0)
+Gui.fmMXMain.GsMatTypes.Create(GsGridControl)
+Gui.fmMXMain.GsMatTypes.Enabled(True)
+Gui.fmMXMain.GsMatTypes.Visible(True)
+Gui.fmMXMain.GsMatTypes.Zorder(0)
+Gui.fmMXMain.GsMatTypes.Size(153,600)
+Gui.fmMXMain.GsMatTypes.Position(890,58)
+Gui.fmMXMain.GsMatTypes.Parent("tabMain",0)
+Gui.fmMXMain.GsMatTypes.Anchor(9)
+Gui.fmMXMain.GsMatTypes.TabStop(True)
+Gui.fmMXMain.GsMatTypes.TabIndex(6)
+Gui.fmMXMain.GsMatTypes.Event(RowCellClick,RowCellClickAll)
+Gui.fmMXMain.cmdPerClear.Create(Button)
+Gui.fmMXMain.cmdPerClear.Enabled(True)
+Gui.fmMXMain.cmdPerClear.Visible(True)
+Gui.fmMXMain.cmdPerClear.Zorder(0)
+Gui.fmMXMain.cmdPerClear.Size(130,32)
+Gui.fmMXMain.cmdPerClear.Position(630,38)
+Gui.fmMXMain.cmdPerClear.Caption("Clear Fields")
+Gui.fmMXMain.cmdPerClear.BackColor(16777215)
+Gui.fmMXMain.cmdPerClear.ForeColor(0)
+Gui.fmMXMain.cmdPerClear.FontName("Tahoma")
+Gui.fmMXMain.cmdPerClear.FontSize(10)
+Gui.fmMXMain.cmdPerClear.Parent("tabMain",1)
+Gui.fmMXMain.cmdPerClear.Event(Click,cmdClear_Click)
+Gui.fmMXMain.cmdPerClear.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.txtSign.Create(TextBox,"",True,100,22,0,496,44,True,0,"Tahoma",10,,1)
+Gui.fmMXMain.txtSign.Parent("tabMain",1)
+Gui.fmMXMain.cmdInitBRW.Create(Button)
+Gui.fmMXMain.cmdInitBRW.Enabled(True)
+Gui.fmMXMain.cmdInitBRW.Visible(True)
+Gui.fmMXMain.cmdInitBRW.Zorder(0)
+Gui.fmMXMain.cmdInitBRW.Size(21,23)
+Gui.fmMXMain.cmdInitBRW.Position(471,42)
+Gui.fmMXMain.cmdInitBRW.Caption("^")
+Gui.fmMXMain.cmdInitBRW.FontName("Tahoma")
+Gui.fmMXMain.cmdInitBRW.FontSize(10)
+Gui.fmMXMain.cmdInitBRW.Parent("tabMain",1)
+Gui.fmMXMain.cmdInitBRW.Event(Click,cmdInitBRW_Click)
+Gui.fmMXMain.cmdSigBRW.Create(Button)
+Gui.fmMXMain.cmdSigBRW.Enabled(True)
+Gui.fmMXMain.cmdSigBRW.Visible(True)
+Gui.fmMXMain.cmdSigBRW.Zorder(0)
+Gui.fmMXMain.cmdSigBRW.Size(21,23)
+Gui.fmMXMain.cmdSigBRW.Position(600,42)
+Gui.fmMXMain.cmdSigBRW.Caption("^")
+Gui.fmMXMain.cmdSigBRW.FontName("Tahoma")
+Gui.fmMXMain.cmdSigBRW.FontSize(10)
+Gui.fmMXMain.cmdSigBRW.Parent("tabMain",1)
+Gui.fmMXMain.cmdSigBRW.Event(Click,cmdSigBRW_Click)
+Gui.fmMXMain.GsSig.Create(GsGridControl)
+Gui.fmMXMain.GsSig.Enabled(True)
+Gui.fmMXMain.GsSig.Visible(True)
+Gui.fmMXMain.GsSig.Zorder(0)
+Gui.fmMXMain.GsSig.Size(1202,575)
+Gui.fmMXMain.GsSig.Position(5,81)
+Gui.fmMXMain.GsSig.Parent("tabMain",1)
+Gui.fmMXMain.GsSig.Event(RowCellClick,GsSig_RowCellClick)
+Gui.fmMXMain.lblFName.Create(Label,"First Name",True,51,13,0,138,28,True,0,"Tahoma",8.25,,0,0)
+Gui.fmMXMain.lblFName.BorderStyle(0)
+Gui.fmMXMain.lblFName.Parent("tabMain",1)
+Gui.fmMXMain.txtUserID.Create(TextBox,"",True,100,22,0,5,44,True,0,"Tahoma",10,,1)
+Gui.fmMXMain.txtUserID.Parent("tabMain",1)
+Gui.fmMXMain.txtUserID.Locked(True)
+Gui.fmMXMain.lblUserID.Create(Label,"GSS User",True,44,13,0,5,28,True,0,"Tahoma",8.25,,0,0)
+Gui.fmMXMain.lblUserID.BorderStyle(0)
+Gui.fmMXMain.lblUserID.Parent("tabMain",1)
+Gui.fmMXMain.txtLName.Create(TextBox,"",True,100,22,0,263,44,True,0,"Tahoma",10,,1)
+Gui.fmMXMain.txtLName.Parent("tabMain",1)
+Gui.fmMXMain.txtLName.Locked(True)
+Gui.fmMXMain.lblLName.Create(Label,"Last Name",True,50,13,0,263,28,True,0,"Tahoma",8.25,,0,0)
+Gui.fmMXMain.lblLName.BorderStyle(0)
+Gui.fmMXMain.lblLName.Parent("tabMain",1)
+Gui.fmMXMain.lblSign.Create(Label,"Signature",True,46,13,0,496,28,True,0,"Tahoma",8.25,,0,0)
+Gui.fmMXMain.lblSign.BorderStyle(0)
+Gui.fmMXMain.lblSign.Parent("tabMain",1)
+Gui.fmMXMain.GsADT.Create(GsGridControl)
+Gui.fmMXMain.GsADT.Enabled(True)
+Gui.fmMXMain.GsADT.Visible(True)
+Gui.fmMXMain.GsADT.Zorder(0)
+Gui.fmMXMain.GsADT.Size(225,600)
+Gui.fmMXMain.GsADT.Position(318,58)
+Gui.fmMXMain.GsADT.Parent("tabMain",0)
+Gui.fmMXMain.GsADT.TabStop(True)
+Gui.fmMXMain.GsADT.TabIndex(3)
+Gui.fmMXMain.GsADT.Event(RowCellClick,RowCellClickAll)
+Gui.fmMXMain.txtInit.Create(TextBox,"",True,100,22,0,367,44,True,0,"Tahoma",10,,1)
+Gui.fmMXMain.txtInit.Parent("tabMain",1)
+Gui.fmMXMain.lblInit.Create(Label,"Initials",True,31,13,0,367,28,True,0,"Tahoma",8.25,,0,0)
+Gui.fmMXMain.lblInit.BorderStyle(0)
+Gui.fmMXMain.lblInit.Parent("tabMain",1)
+Gui.fmMXMain.cmdDel.Create(Button)
+Gui.fmMXMain.cmdDel.Enabled(True)
+Gui.fmMXMain.cmdDel.Visible(True)
+Gui.fmMXMain.cmdDel.Zorder(0)
+Gui.fmMXMain.cmdDel.Size(130,32)
+Gui.fmMXMain.cmdDel.Position(892,38)
+Gui.fmMXMain.cmdDel.Caption("Delete User")
+Gui.fmMXMain.cmdDel.BackColor(12632319)
+Gui.fmMXMain.cmdDel.ForeColor(0)
+Gui.fmMXMain.cmdDel.FontName("Tahoma")
+Gui.fmMXMain.cmdDel.FontSize(10)
+Gui.fmMXMain.cmdDel.Parent("tabMain",1)
+Gui.fmMXMain.cmdDel.Event(Click,cmdDel_Click)
+Gui.fmMXMain.cmdDel.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.txtFName.Create(TextBox,"",True,121,22,0,138,44,True,0,"Tahoma",10,,1)
+Gui.fmMXMain.txtFName.Parent("tabMain",1)
+Gui.fmMXMain.txtFName.Locked(True)
+Gui.fmMXMain.cmdUpdate.Create(Button)
+Gui.fmMXMain.cmdUpdate.Enabled(True)
+Gui.fmMXMain.cmdUpdate.Visible(True)
+Gui.fmMXMain.cmdUpdate.Zorder(0)
+Gui.fmMXMain.cmdUpdate.Size(130,32)
+Gui.fmMXMain.cmdUpdate.Position(761,38)
+Gui.fmMXMain.cmdUpdate.Caption("Add/Update User")
+Gui.fmMXMain.cmdUpdate.FontName("Tahoma")
+Gui.fmMXMain.cmdUpdate.FontSize(10)
+Gui.fmMXMain.cmdUpdate.Parent("tabMain",1)
+Gui.fmMXMain.cmdUpdate.BackColor(12648384)
+Gui.fmMXMain.cmdUpdate.ForeColor(0)
+Gui.fmMXMain.cmdUpdate.FontStyle(True,False,False,False,False)
+Gui.fmMXMain.cmdUpdate.Event(Click,cmdUpdate_Click)
+Gui.fmMXMain.cmdUserBRW.Create(Button)
+Gui.fmMXMain.cmdUserBRW.Enabled(True)
+Gui.fmMXMain.cmdUserBRW.Visible(True)
+Gui.fmMXMain.cmdUserBRW.Zorder(0)
+Gui.fmMXMain.cmdUserBRW.Size(21,23)
+Gui.fmMXMain.cmdUserBRW.Position(110,42)
+Gui.fmMXMain.cmdUserBRW.Caption("^")
+Gui.fmMXMain.cmdUserBRW.FontName("Tahoma")
+Gui.fmMXMain.cmdUserBRW.FontSize(10)
+Gui.fmMXMain.cmdUserBRW.Parent("tabMain",1)
+Gui.fmMXMain.cmdUserBRW.Event(Click,cmdUserBRW_Click)
+Gui.fmMXMain.Gs8130StatusTypes.Create(GsGridControl)
+Gui.fmMXMain.Gs8130StatusTypes.Enabled(True)
+Gui.fmMXMain.Gs8130StatusTypes.Visible(True)
+Gui.fmMXMain.Gs8130StatusTypes.Zorder(0)
+Gui.fmMXMain.Gs8130StatusTypes.Size(153,600)
+Gui.fmMXMain.Gs8130StatusTypes.Position(162,58)
+Gui.fmMXMain.Gs8130StatusTypes.Parent("tabMain",0)
+Gui.fmMXMain.Gs8130StatusTypes.TabStop(True)
+Gui.fmMXMain.Gs8130StatusTypes.TabIndex(2)
+Gui.fmMXMain.Gs8130StatusTypes.Event(RowCellClick,RowCellClickAll)
+Gui.fmMXMain.GsPL.Create(GsGridControl)
+Gui.fmMXMain.GsPL.Enabled(True)
+Gui.fmMXMain.GsPL.Visible(True)
+Gui.fmMXMain.GsPL.Zorder(0)
+Gui.fmMXMain.GsPL.Size(153,600)
+Gui.fmMXMain.GsPL.Position(732,58)
+Gui.fmMXMain.GsPL.Parent("tabMain",0)
+Gui.fmMXMain.GsPL.Anchor(9)
+Gui.fmMXMain.GsPL.TabStop(True)
+Gui.fmMXMain.GsPL.TabIndex(5)
+Gui.fmMXMain.GsPL.Event(RowCellClick,RowCellClickAll)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+F.Intrinsic.Control.CallSub(Data)
+F.Intrinsic.Control.CallSub(PersonnelData)
+F.Intrinsic.Control.CallSub(SetIcon)
+Gui.fmMXMain.tabMain.SetTab(0)
+Gui.fmMXMain..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.Data.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.DataTable.dt8130Types.Exists)
+	F.Data.DataTable.Close("dt8130Types")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dt8130Status.Exists)
+	F.Data.DataTable.Close("dt8130Status")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtADT.Exists)
+	F.Data.DataTable.Close("dtADT")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtDisc.Exists)
+	F.Data.DataTable.Close("dtDisc")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtMAT.Exists)
+	F.Data.DataTable.Close("dtMAT")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtROD.Exists)
+	F.Data.DataTable.Close("dtROD")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtPL.Exists)
+	F.Data.DataTable.Close("dtPL")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtVoid.Exists)
+	F.Data.DataTable.Close("dtVoid")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+'8130 Types
+F.Data.DataTable.CreateFromSQL("dt8130Types","conts","Select * from GCG_5727_8130_LIST order by 1",True)
+
+'8130 Status Types
+F.Data.DataTable.CreateFromSQL("dt8130Status","conts","Select * from GCG_5727_8130S_LIST order by 1",True)
+
+'Approved Data Types
+F.Data.DataTable.CreateFromSQL("dtADT","conts","Select * from GCG_5727_ADATA_LIST order by 1",True)
+
+'Discrpancy Types
+F.Data.DataTable.CreateFromSQL("dtDisc","conts","Select * from GCG_5727_DISC_LIST order by 1",True)
+
+'8130 Product Lines
+F.Data.DataTable.CreateFromSQL("dtPL","conts","Select * from GCG_5727_FAA_PL order by 1",True)
+
+'Material Types
+F.Data.DataTable.CreateFromSQL("dtMAT","conts","Select * from GCG_5727_MAT_LIST order by 1",True)
+
+'Rod Types 
+F.Data.DataTable.CreateFromSQL("dtROD","conts","Select * from GCG_5727_ROD_LIST order by 1",True)
+
+'Void Reasons 
+F.Data.DataTable.CreateFromSQL("dtVoid","conts","Select * from GCG_5727_VOID_RSN order by 1",True)
+
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.CallSub(FormatGrids)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Data.End
+
+Program.Sub.FormatGrids.Start
+F.Intrinsic.Control.Try
+
+'8130 Types
+Gui.fmMXMain.Gs8130Type.AddGridviewFromDatatable("gv8130Types","dt8130Types")
+Gui.fmMXMain.Gs8130Type.MainView("gv8130Types")
+Gui.fmMXMain.Gs8130Type.SetGridviewProperty("gv8130Types","Editable",False)
+Gui.fmMXMain.Gs8130Type.SetGridviewProperty("gv8130Types","Readonly",True)
+Gui.fmMXMain.Gs8130Type.SetColumnProperty("gv8130Types","C8130_TYPE","ShowCaption",False)
+Gui.fmMXMain.Gs8130Type.SetColumnProperty("gv8130Types","C8130_TYPE","AllowGroup",False)
+Gui.fmMXMain.Gs8130Type.SetColumnProperty("gv8130Types","ID","Visible",False)
+Gui.fmMXMain.Gs8130Type.SetColumnProperty("gv8130Types","ID","AllowShowHide",False)
+
+'8130 Status Types
+Gui.fmMXMain.Gs8130StatusTypes.AddGridviewFromDatatable("gv8130Status","dt8130Status")
+Gui.fmMXMain.Gs8130StatusTypes.MainView("gv8130Status")
+Gui.fmMXMain.Gs8130StatusTypes.SetGridviewProperty("gv8130Status","Editable",False)
+Gui.fmMXMain.Gs8130StatusTypes.SetGridviewProperty("gv8130Status","Readonly",True)
+Gui.fmMXMain.Gs8130StatusTypes.SetColumnProperty("gv8130Status","C8130_STATUS_TYPE","ShowCaption",False)
+Gui.fmMXMain.Gs8130StatusTypes.SetColumnProperty("gv8130Status","C8130_STATUS_TYPE","AllowGroup",False)
+
+'Approved Data Types
+Gui.fmMXMain.GsADT.AddGridviewFromDatatable("gvADT","dtADT")
+Gui.fmMXMain.GsADT.MainView("gvADT")
+Gui.fmMXMain.GsADT.SetGridviewProperty("gvADT","Editable",False)
+Gui.fmMXMain.GsADT.SetGridviewProperty("gvADT","Readonly",True)
+Gui.fmMXMain.GsADT.SetColumnProperty("gvADT","APPROVED_DATA_TYPE","ShowCaption",False)
+Gui.fmMXMain.GsADT.SetColumnProperty("gvADT","APPROVED_DATA_TYPE","AllowGroup",False)
+
+'Discrepancy Types
+Gui.fmMXMain.GsDiscType.AddGridviewFromDatatable("gvDisc","dtDisc")
+Gui.fmMXMain.GsDiscType.MainView("gvDisc")
+Gui.fmMXMain.GsDiscType.SetGridviewProperty("gvDisc","Editable",False)
+Gui.fmMXMain.GsDiscType.SetGridviewProperty("gvDisc","Readonly",True)
+Gui.fmMXMain.GsDiscType.SetColumnProperty("gvDisc","DISCREPANCY_TYPE","ShowCaption",False)
+Gui.fmMXMain.GsDiscType.SetColumnProperty("gvDisc","DISCREPANCY_TYPE","AllowGroup",False)
+
+'8130 Product Lines
+Gui.fmMXMain.GsPL.AddGridviewFromDatatable("gvPL","dtPL")
+Gui.fmMXMain.GsPL.MainView("gvPL")
+Gui.fmMXMain.GsPL.SetGridviewProperty("gvPL","Editable",False)
+Gui.fmMXMain.GsPL.SetGridviewProperty("gvPL","Readonly",True)
+Gui.fmMXMain.GsPL.SetColumnProperty("gvPL","PL","ShowCaption",False)
+Gui.fmMXMain.GsPL.SetColumnProperty("gvPL","PL","AllowGroup",False)
+
+'Material Types
+Gui.fmMXMain.GsMatTypes.AddGridviewFromDatatable("gvMAT","dtMAT")
+Gui.fmMXMain.GsMatTypes.MainView("gvMAT")
+Gui.fmMXMain.GsMatTypes.SetGridviewProperty("gvMAT","Editable",False)
+Gui.fmMXMain.GsMatTypes.SetGridviewProperty("gvMAT","Readonly",True)
+Gui.fmMXMain.GsMatTypes.SetColumnProperty("gvMAT","MATERIAL_TYPE","ShowCaption",False)
+Gui.fmMXMain.GsMatTypes.SetColumnProperty("gvMAT","MATERIAL_TYPE","AllowGroup",False)
+
+'Rod Types 
+Gui.fmMXMain.GsRodTypes.AddGridviewFromDatatable("gvROD","dtROD")
+Gui.fmMXMain.GsRodTypes.MainView("gvROD")
+Gui.fmMXMain.GsRodTypes.SetGridviewProperty("gvROD","Editable",False)
+Gui.fmMXMain.GsRodTypes.SetGridviewProperty("gvROD","Readonly",True)
+Gui.fmMXMain.GsRodTypes.SetColumnProperty("gvROD","INCONEL_TYPE","ShowCaption",False)
+Gui.fmMXMain.GsRodTypes.SetColumnProperty("gvROD","INCONEL_TYPE","AllowGroup",False)
+
+'Void Reasons
+Gui.fmMXMain.GsVoid.AddGridviewFromDatatable("gvVoid","dtVoid")
+Gui.fmMXMain.GsVoid.MainView("gvVoid")
+Gui.fmMXMain.GsVoid.SetGridviewProperty("gvVoid","Editable",False)
+Gui.fmMXMain.GsVoid.SetGridviewProperty("gvVoid","Readonly",True)
+Gui.fmMXMain.GsVoid.SetColumnProperty("gvVoid","AUTO_ID","Visible",False)
+Gui.fmMXMain.GsVoid.SetColumnProperty("gvVoid","VOID_REASON","ShowCaption",False)
+Gui.fmMXMain.GsVoid.SetColumnProperty("gvVoid","VOID_REASON","AllowGroup",False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatGrids.End
+
+Program.Sub.PersonnelData.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.DataTable.dtPersonnel.Exists)
+	F.Data.DataTable.Close("dtPersonnel")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+'Personnel MX
+F.Data.DataTable.CreateFromSQL("dtPersonnel","conts","Select * from GCG_5727_SIG_FILES",True)
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.CallSub(PersonnelGrid)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.PersonnelData.End
+
+Program.Sub.PersonnelGrid.Start
+F.Intrinsic.Control.Try
+
+'Personnel MX
+Gui.fmMXMain.GsSig.AddGridviewFromDatatable("gvPersonnel","dtPersonnel")
+Gui.fmMXMain.GsSig.MainView("gvPersonnel")
+Gui.fmMXMain.GsSig.SetGridviewProperty("gvPersonnel","Editable",False)
+Gui.fmMXMain.GsSig.SetGridviewProperty("gvPersonnel","Readonly",True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.PersonnelGrid.End
+
+Program.Sub.RowCellClickAll.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.SelectCase(V.Args.ControlName)
+	F.Intrinsic.Control.Case("GS8130TYPE")
+		Gui.fmMXMain.cboWhichList.Text("8130 Types")
+	F.Intrinsic.Control.Case("GS8130STATUSTYPES")
+		Gui.fmMXMain.cboWhichList.Text("8130 Status Types")
+	F.Intrinsic.Control.Case("GSADT")
+		Gui.fmMXMain.cboWhichList.Text("Approved Data Type")
+	F.Intrinsic.Control.Case("GSDISCTYPE")
+		Gui.fmMXMain.cboWhichList.Text("Discrepancy Types")
+	F.Intrinsic.Control.Case("GSPL")
+		Gui.fmMXMain.cboWhichList.Text("Product Lines")
+	F.Intrinsic.Control.Case("GSMATTYPES")
+		Gui.fmMXMain.cboWhichList.Text("Material Types")
+	F.Intrinsic.Control.Case("GSRODTYPES")
+		Gui.fmMXMain.cboWhichList.Text("Rod Types")
+	F.Intrinsic.Control.Case("GSVOID")
+		Gui.fmMXMain.cboWhichList.Text("Void Reasons")
+F.Intrinsic.Control.EndSelect
+
+Gui.fmMXMain.txtEntry.Text(V.Args.CellValue.Trim)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.RowCellClickAll.End
+
+Program.Sub.GsSig_RowCellClick.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsSig_RowCellClick.End
+
+Program.Sub.cmdUserBRW_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sGSUser.Declare
+V.Local.sUser.Declare
+V.Local.sSQL.Declare
+V.Local.sBlobs.Declare
+
+Gui.fmMXMain..AlwaysOnTop(False)
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+F.Intrinsic.UI.Browser(10,"",V.Local.sGSUser)
+
+F.Intrinsic.Control.If(V.Local.sGSUser.Trim,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sGSUser,"*!*",V.Local.sGSUser)
+	V.Local.sUser.Set(V.Local.sGSUser(1).Trim)
+	Gui.fmMXMain.txtUserID.Text(V.Local.sGSUser(1).Trim)
+	Gui.fmMXMain.txtFName.Text(V.Local.sGSUser(3).Trim)
+	Gui.fmMXMain.txtLName.Text(V.Local.sGSUser(4).Trim)
+	F.Intrinsic.String.Build("Select If(IsNull(Cast(INITIALS as char), '') = '','Y','N') as INITIALS,If(IsNull(Cast(SIGNATURE as char), '') = '','Y','N') as SIGNATURE from GCG_5727_SIG_FILES where GSUSER = '{0}'",V.Local.sUser,V.Local.sSQL)
+	F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sBlobs)
+	F.ODBC.Connection!conts.Close
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		Gui.fmMXMain..AlwaysOnTop(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Split(V.Local.sBlobs,"*!*",V.Local.sBlobs)
+		F.Intrinsic.Control.If(V.Local.sBlobs(0).Trim,=,"N")
+			Gui.fmMXMain.txtInit.Text("Initials on file")
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.Local.sBlobs(1).Trim,=,"N")
+			Gui.fmMXMain.txtSign.Text("Signature on file")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.ODBC.Connection!conts.Close
+F.Intrinsic.Control.EndIf
+
+Gui.fmMXMain..AlwaysOnTop(True)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdUserBRW_Click.End
+
+Program.Sub.cmdSigBRW_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sFile.Declare
+
+Gui.fmMXMain..AlwaysOnTop(False)
+'Allow Windows search for the file path and set
+Function.Intrinsic.UI.ShowOpenFileDiaLog("",,524288,V.Local.sFile)
+
+F.Intrinsic.Control.If(V.Local.sFile,<>,"***CANCEL***")
+	Gui.fmMXMain.txtSign.Text(V.Local.sFile)
+F.Intrinsic.Control.EndIf
+
+Gui.fmMXMain..AlwaysOnTop(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSigBRW_Click.End
+
+Program.Sub.cmdInitBRW_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sFile.Declare
+
+Gui.fmMXMain..AlwaysOnTop(False)
+
+'Allow Windows search for the file path and set
+Function.Intrinsic.UI.ShowOpenFileDiaLog("",,524288,V.Local.sFile)
+
+F.Intrinsic.Control.If(V.Local.sFile,<>,"***CANCEL***")
+	Gui.fmMXMain.txtInit.Text(V.Local.sFile)
+F.Intrinsic.Control.EndIf
+
+Gui.fmMXMain..AlwaysOnTop(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdInitBRW_Click.End
+
+Program.Sub.cmdUpdate_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sGSUser.Declare
+V.Local.sSQL.Declare
+V.Local.sInsert.Declare
+V.Local.sUpdate.Declare
+
+V.Local.sGSUser.Set(V.Screen.fmMXMain!txtUserID.Text)
+
+F.Intrinsic.Control.If(V.Local.sGSUser,=,"")
+	F.Intrinsic.UI.Msgbox("Please select a valid Global Shop User ID","Error")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.ElseIf(V.Screen.fmMXMain!txtInit.Text,=,"","OR",V.Screen.fmMXMain!txtSign.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Please provide a path to the user's initial and signature images.","Error")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.Intrinsic.String.Build("Select GSUSER from GCG_5727_SIG_FILES where GSUSER = '{0}'",V.Local.sGSUser.Trim,V.Local.sSQL)
+F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.Local.sSQL.Trim,=,"")
+	F.Intrinsic.String.Build("Insert into GCG_5727_SIG_FILES (GSUSER,FIRST_NAME,LAST_NAME) values('{0}','{1}','{2}')",V.Local.sGSUser.Trim,V.Screen.fmMXMain!txtFName.Text,V.Screen.fmMXMain!txtLName.Text,V.Local.sInsert)
+	F.ODBC.Connection!conts.Execute(V.Local.sInsert)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("Update GCG_5727_SIG_FILES set GSUSER = '{0}', FIRST_NAME = '{1}',LAST_NAME = '{2}', INITIALS = '', SIGNATURE = '' where GSUSER = '{3}'",V.Local.sGSUser.Trim,V.Screen.fmMXMain!txtFName.Text,V.Screen.fmMXMain!txtLName.Text,V.Local.sGSUser.Trim,V.Local.sUpdate)
+	F.ODBC.Connection!conts.Execute(V.Local.sUpdate)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("Select * from GCG_5727_SIG_FILES where GSUSER = '{0}'",V.Local.sGSUser.Trim,V.Local.sSQL)
+
+F.ODBC.Connection!conts.OpenRecordsetRW("rstBLOB",V.Local.sSQL)
+
+F.ODBC.conts!rstBLOB.SaveFiletoBLOB("INITIALS",V.Screen.fmMXMain!txtInit.Text)
+F.ODBC.conts!rstBLOB.SaveFiletoBLOB("SIGNATURE",V.Screen.fmMXMain!txtSign.Text)
+
+F.ODBC.conts!rstBLOB.Update
+
+F.ODBC.Connection!conts.CloseRecordsets
+
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.CallSub(cmdClear_Click,"ControlName","CMDPERCLEAR")
+
+F.Intrinsic.Control.CallSub(PersonnelData)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdUpdate_Click.End
+
+Program.Sub.cmdClear_Click.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.SelectCase(V.Args.ControlName)
+	F.Intrinsic.Control.Case("CMDLISTCLEAR")
+		Gui.fmMXMain.txtEntry.Text("")
+		Gui.fmMXMain.cboWhichList.Text("")
+	F.Intrinsic.Control.Case("CMDPERCLEAR")
+		Gui.fmMXMain.txtUserID.Text("")
+		Gui.fmMXMain.txtFName.Text("")
+		Gui.fmMXMain.txtLName.Text("")
+		Gui.fmMXMain.txtInit.Text("")
+		Gui.fmMXMain.txtSign.Text("")
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.cmdDel_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sSQL.Declare
+V.Local.sMSG.Declare
+V.Local.iRET.Declare
+
+Gui.fmMXMain..AlwaysOnTop(False)
+
+F.Intrinsic.String.Build("Are you sure you want to delete this user?{0}They may have current 8130 forms linked to their signature files",V.Ambient.NewLine,V.Local.sMSG)
+F.Intrinsic.UI.Msgbox(V.Local.sMSG,"!!WARNING!!",4,V.Local.iRET)
+
+F.Intrinsic.Control.If(V.Local.iRET.Trim,=,6)
+	F.ODBC.Connection!conts.OpenCompanyConnection
+	F.Intrinsic.String.Build("delete GCG_5727_SIG_FILES where GSUSER = '{0}'",V.Screen.fmMXMain!txtUserID.Text,V.Local.sSQL)
+	F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	F.ODBC.Connection!conts.Close
+	Gui.fmMXMain.txtUserID.Text("")
+	Gui.fmMXMain.txtFName.Text("")
+	Gui.fmMXMain.txtLName.Text("")
+	Gui.fmMXMain.txtInit.Text("")
+	Gui.fmMXMain.txtSign.Text("")
+F.Intrinsic.Control.EndIf
+
+Gui.fmMXMain..AlwaysOnTop(True)
+
+F.Intrinsic.Control.CallSub(PersonnelData)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDel_Click.End
+
+Program.Sub.Gs8130StatusTypes_RowCellClick.Start
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Gs8130StatusTypes_RowCellClick.End
+
+Program.Sub.cmdAdd_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sList.Declare
+V.Local.sEntry.Declare
+V.Local.sSQL.Declare
+
+V.Local.sList.Set(V.Screen.fmMXMain!cboWhichList.Text)
+V.Local.sEntry.Set(V.Screen.fmMXMain!txtEntry.Text)
+
+F.Intrinsic.Control.If(V.Local.sList.Trim,=,"","OR",V.Local.sEntry.Trim,=,"")
+	Gui.fmMXMain..AlwaysOnTop(False)
+	F.Intrinsic.UI.Msgbox("Please fill all the fields to the left","Data missing")
+	Gui.fmMXMain..AlwaysOnTop(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.Intrinsic.Control.SelectCase(V.Local.sList.Trim)
+	F.Intrinsic.Control.Case("8130 Types")
+		F.Intrinsic.String.Build("Select * from GCG_5727_8130_LIST where C8130_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("insert into GCG_5727_8130_LIST (C8130_TYPE) values('{0}')",V.Local.sEntry.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Entry already exists","Duplicate Entry")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("8130 Status Types")
+		F.Intrinsic.String.Build("Select * from GCG_5727_8130S_LIST where C8130_STATUS_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("insert into GCG_5727_8130S_LIST (C8130_STATUS_TYPE) values('{0}')",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Entry already exists","Duplicate Entry")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("Approved Data Type")
+		F.Intrinsic.String.Build("Select * from GCG_5727_ADATA_LIST where APPROVED_DATA_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("insert into GCG_5727_ADATA_LIST (APPROVED_DATA_TYPE) values('{0}')",V.Local.sEntry.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Entry already exists","Duplicate Entry")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("Discrepancy Types")
+		F.Intrinsic.String.Build("Select * from GCG_5727_DISC_LIST where DISCREPANCY_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("insert into GCG_5727_DISC_LIST (DISCREPANCY_TYPE) values('{0}')",V.Local.sEntry.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Entry already exists","Duplicate Entry")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("Product Lines")
+		F.Intrinsic.String.Build("Select * from GCG_5727_FAA_PL where PL = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("insert into GCG_5727_FAA_PL (PL) values('{0}')",V.Local.sEntry.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Entry already exists","Duplicate Entry")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("Material Types")
+		F.Intrinsic.String.Build("Select * from GCG_5727_MAT_LIST where MATERIAL_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("insert into GCG_5727_MAT_LIST (MATERIAL_TYPE) values('{0}')",V.Local.sEntry.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Entry already exists","Duplicate Entry")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("Rod Types")
+		F.Intrinsic.String.Build("Select * from GCG_5727_ROD_LIST where INCONEL_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("insert into GCG_5727_ROD_LIST (INCONEL_TYPE) values('{0}')",V.Local.sEntry.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Entry already exists","Duplicate Entry")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("Void Reasons")
+		F.Intrinsic.String.Build("Select * from GCG_5727_VOID_RSN where VOID_REASON = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("insert into GCG_5727_VOID_RSN (VOID_REASON) values('{0}')",V.Local.sEntry.Trim,V.Local.sSQL)
+			F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Entry already exists","Duplicate Entry")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.CaseElse
+		F.Intrinsic.UI.Msgbox("Please choose an existing list from the dropdown","List does not exist")
+F.Intrinsic.Control.EndSelect
+
+F.ODBC.Connection!conts.Close
+
+Gui.fmMXMain.txtEntry.Text("")
+Gui.fmMXMain.cboWhichList.Text("")
+
+Gui.fmMXMain..Enabled(False)
+Gui.fmMXMain.Gs8130Type.SuspendLayout
+Gui.fmMXMain.Gs8130StatusTypes.SuspendLayout
+Gui.fmMXMain.GsADT.SuspendLayout
+Gui.fmMXMain.GsDiscType.SuspendLayout
+Gui.fmMXMain.GsMatTypes.SuspendLayout
+Gui.fmMXMain.GsPL.SuspendLayout
+Gui.fmMXMain.GsRodTypes.SuspendLayout
+Gui.fmMXMain.GsVoid.SuspendLayout
+
+F.Intrinsic.Control.CallSub(Data)
+
+Gui.fmMXMain.Gs8130Type.ResumeLayout
+Gui.fmMXMain.Gs8130StatusTypes.ResumeLayout
+Gui.fmMXMain.GsADT.ResumeLayout
+Gui.fmMXMain.GsDiscType.ResumeLayout
+Gui.fmMXMain.GsMatTypes.ResumeLayout
+Gui.fmMXMain.GsPL.ResumeLayout
+Gui.fmMXMain.GsRodTypes.ResumeLayout
+Gui.fmMXMain.GsVoid.ResumeLayout
+
+Gui.fmMXMain..Enabled(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdAdd_Click.End
+
+Program.Sub.cmdDelete_Click.Start
+F.Intrinsic.Control.Try
+
+V.Local.sList.Declare
+V.Local.sEntry.Declare
+V.Local.sSQL.Declare
+
+V.Local.sList.Set(V.Screen.fmMXMain!cboWhichList.Text)
+V.Local.sEntry.Set(V.Screen.fmMXMain!txtEntry.Text)
+
+F.Intrinsic.Control.If(V.Local.sList.Trim,=,"","OR",V.Local.sEntry.Trim,=,"")
+	Gui.fmMXMain..AlwaysOnTop(False)
+	F.Intrinsic.UI.Msgbox("Please fill all the fields to the left","Data missing")
+	Gui.fmMXMain..AlwaysOnTop(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.Intrinsic.Control.SelectCase(V.Local.sList.Trim)
+	F.Intrinsic.Control.Case("8130 Types")
+		F.Intrinsic.String.Build("Delete GCG_5727_8130_LIST where C8130_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Case("8130 Status Types")
+		F.Intrinsic.String.Build("Delete GCG_5727_8130S_LIST where C8130_STATUS_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Case("Approved Data Type")
+		F.Intrinsic.String.Build("Delete GCG_5727_ADATA_LIST where APPROVED_DATA_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Case("Discrepancy Types")
+		F.Intrinsic.String.Build("Delete GCG_5727_DISC_LIST where DISCREPANCY_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Case("Product Lines")
+		F.Intrinsic.String.Build("Delete GCG_5727_FAA_PL where PL = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Case("Material Types")
+		F.Intrinsic.String.Build("Delete GCG_5727_MAT_LIST where MATERIAL_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Case("Rod Types")
+		F.Intrinsic.String.Build("Delete GCG_5727_ROD_LIST where INCONEL_TYPE = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Case("Void Reasons")
+		F.Intrinsic.String.Build("Delete GCG_5727_VOID_RSN where VOID_REASON = '{0}'",V.Local.sEntry.Trim,V.Local.sSQL)
+		F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.CaseElse
+		F.Intrinsic.UI.Msgbox("Please choose an existing list from the dropdown","List does not exist")
+F.Intrinsic.Control.EndSelect
+
+F.ODBC.Connection!conts.Close
+
+Gui.fmMXMain.txtEntry.Text("")
+Gui.fmMXMain.cboWhichList.Text("")
+
+Gui.fmMXMain..Enabled(False)
+Gui.fmMXMain.Gs8130Type.SuspendLayout
+Gui.fmMXMain.Gs8130StatusTypes.SuspendLayout
+Gui.fmMXMain.GsADT.SuspendLayout
+Gui.fmMXMain.GsDiscType.SuspendLayout
+Gui.fmMXMain.GsMatTypes.SuspendLayout
+Gui.fmMXMain.GsPL.SuspendLayout
+Gui.fmMXMain.GsRodTypes.SuspendLayout
+Gui.fmMXMain.GsVoid.SuspendLayout
+
+F.Intrinsic.Control.CallSub(Data)
+
+Gui.fmMXMain.Gs8130Type.ResumeLayout
+Gui.fmMXMain.Gs8130StatusTypes.ResumeLayout
+Gui.fmMXMain.GsADT.ResumeLayout
+Gui.fmMXMain.GsDiscType.ResumeLayout
+Gui.fmMXMain.GsMatTypes.ResumeLayout
+Gui.fmMXMain.GsPL.ResumeLayout
+Gui.fmMXMain.GsRodTypes.ResumeLayout
+Gui.fmMXMain.GsVoid.ResumeLayout
+
+Gui.fmMXMain..Enabled(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDelete_Click.End
+
+Program.Sub.SetIcon.Start
+F.Intrinsic.Control.Try
+V.Local.sForm.Declare
+V.Local.bExists.Declare
+V.Local.sIcon.Declare
+V.Local.iCounter.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+    F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+    F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+    F.Intrinsic.Control.If(V.Local.bExists.Not)
+        F.Intrinsic.Control.ExitSub
+    F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.GetFormList(V.Local.sForm)
+F.Intrinsic.String.Split(V.Local.sForm, "*!*", V.Local.sForm)
+
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.Local.sForm.UBound, 1)
+    Gui.[V.Local.sForm(V.Local.iCounter)]..Icon(V.Local.sIcon)
+F.Intrinsic.Control.Next(V.Local.iCounter)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetIcon.End
+
+Program.Sub.Form_UnLoad.Start
+F.Intrinsic.Control.End
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.Error.Start
+V.Local.sError.Declare
+V.Local.iRet.Declare
+V.Local.sSep.Declare
+Gui.fmMXMain..AlwaysOnTop(False)
+
+F.Intrinsic.String.Build("-------------------------------------------------------------------------------------",,V.Local.sSep)
+F.Intrinsic.String.Build("({5}-{6}){0}{7}{0}Project: {4}{0}{7}{0}Sub: {1}{0}Error: {2}, {3}", V.Ambient.NewLine, V.Args.SubRoutine, V.Args.eNumber, V.Args.eDescription,V.Caller.ScriptFile,V.Ambient.Date, V.Ambient.Time,V.Local.sSep,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError,"Error",V.Local.iRet)
+Program.Sub.Error.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$tsmith$}$20200909082900820$}$xqPbj9atw05FglvzeFsZ9cqXP+qvG6tXLVWePnGTqIPf8S+C9IoJJiV+R2LdJ+m0R2HKwKu//bg=
+Program.Sub.Comments.End
