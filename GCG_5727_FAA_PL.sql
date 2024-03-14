@@ -1,0 +1,2 @@
+CREATE TABLE "GCG_5727_FAA_PL" (
+ "PL" CHAR(2) );
